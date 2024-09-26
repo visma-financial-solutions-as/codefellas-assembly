@@ -1,0 +1,1 @@
+&docker.exe buildx build -t codefellas/assembly .

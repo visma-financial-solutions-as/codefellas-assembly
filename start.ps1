@@ -1,0 +1,1 @@
+&docker.exe run -v codefellasasm:/app -ti codefellas/assembly
