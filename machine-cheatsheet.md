@@ -92,4 +92,4 @@ In these listings, `a` and `b` represent operands, not literally a or b. What ca
  - `call a` : Pushes the current value of the instruction pointer, and jumps to the address referred to by `a`
  - `int a` : Raises an interrupt at interrupt vector `a`
  - `syscall` : Unix-specific, calls the interrupt vector `0x80`
- 
+ - `ret` : returns to the address stored by `call`
