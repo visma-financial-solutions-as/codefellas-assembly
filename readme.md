@@ -48,7 +48,7 @@ That's it, let's gooooo
 
 # Well ok how then
 
-Clone the repo, run `init.ps1` to build the docker image, and then `run.ps1` to run the docker image with a persistent volume
+Clone the repo, run `init.ps1` to build the docker image, and then `start.ps1` to run the docker image with a persistent volume
 
 # Thanks, I guess
 
