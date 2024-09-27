@@ -17,15 +17,15 @@ Criteria :
 
 Lyrics :
 
-  n bottles of beer on the wall, n bottles of beer.
-  Take one down, pass it around, n-1 bottles of beer on the wall.
+    n bottles of beer on the wall, n bottles of beer.
+    Take one down, pass it around, n-1 bottles of beer on the wall.
 
 Repeat from 99-0
 
 When it reaches zero, the last stanza should read 
 
-  No more bottles of beer on the wall, no more bottles of beer.
-  Go to the store and buy some more, 99 bottles of beer on the wall
+    No more bottles of beer on the wall, no more bottles of beer.
+    Go to the store and buy some more, 99 bottles of beer on the wall
 
 This repository contains the necessary basic tools to compile and link assembly files
 
@@ -82,6 +82,11 @@ Clone the repo, run `init.ps1` to build the docker image, and then `start.ps1` t
 # Thanks, I guess
 
 You're most welcome
+
+Some reference material :
+
+[Quick introduction](assembly-introduction.md)  
+[Machine cheatsheet](machine-cheatsheet.md)  
 
 # Addendum
 
