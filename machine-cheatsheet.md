@@ -10,6 +10,14 @@ In assembly, for data segments they use : `db` (data byte), `dw` (data word), `d
 
 # Registers
 
+The CPU has a series of temporary storage variables referred to as registers.
+These are normally the size of the CPU architecture (64-bit in our case).
+They are each stored in a union, meaning many can be accessed in different sizes, 64, 32, 16, and 8 bits.
+Accessing the 16-bit of RAX for instance (AX) will retrieve only the 16 lower bits of the registers.
+Registers are the fastest to access.
+
+Here's a quick summary :
+
 64-bit - 32-bit - 16-bit - 8-bit high - 8-bit low
 
  - RAX - EAX, AX, AH, AL : Accumulator
@@ -23,7 +31,7 @@ In assembly, for data segments they use : `db` (data byte), `dw` (data word), `d
  - R8 - R8D, R8W : General purpose
  - ... R15
 
-And then there's RIP - EIP - IP : Instruction pointer. This register is read-only
+And then there's RIP - EIP - IP : Instruction pointer. This register is read-only. It tells what address is currently being executed
 
 ## Segment registers
 
@@ -42,7 +50,7 @@ Segment registers are still there, but they are 16-bit only.
 
 # Instructions
 
-Keep in mind that assembly instructions goes `[target] [source]`, so the first operand is usually the target for an instruction
+Keep in mind that Intel assembly instructions goes `[target] [source]`, so the first operand is usually the target for an instruction
 
 # Processor flags
 
@@ -74,16 +82,16 @@ And tons more, let's not delve too deep
 
 In these listings, `a` and `b` represent operands, not literally a or b. What can be used in `a` or `b` depends on the instruction in question
 
- - `mov b, a` : copies a value from b to a
+ - `mov b, a` : copies a value from a to b
  - `add b, a` : Adds two integer values (yes, integers) and stores the value in b
- - `adc b, a` : Adds two integers and sets carry flag on overflow
- - `sub b, a` : subtracts two integer values and
+ - `adc b, a` : Adds two integers and sets carry flag if the addition carries
+ - `sub b, a` : subtracts two integer values
  - `fadd b, a` : Floating point add
- - `cmp b, a` : compares two values and populates CPU flags to indicate the result
+ - `cmp b, a` : compares two values and populates CPU flags to indicate the result (zero and equal for instance)
  - `push a` : Pushes the value of `a` onto the stack
  - `pop a` : Pops the value on top of the stack and stores it in `a`
- - `jmp a` : Unconditional to address stored in `a`
-    - `je` : Jump if value is equal (result of `cmp` setting the zero flag to true, in practice)
+ - `jmp a` : Unconditional jump to address stored in `a`
+    - `je` : Jump if value is equal (result of `cmp` setting the equal flag to true for instance)
     - `jg` : Jump if greater
     - `jge` : Jump if greater or equal
     - `jl` : Jump if lesser
